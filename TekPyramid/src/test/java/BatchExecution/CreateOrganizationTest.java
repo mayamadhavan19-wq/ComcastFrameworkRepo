@@ -7,13 +7,13 @@ import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.Status;
 import com.comcast.crm.geneic.webdriverutility.UtilityClassObject;
+import com.comcast.crm.objectrepositoryutility.CreatingNewOrganizationPage;
 import com.comcast.crm.objectrepositoryutility.HomePage;
-import com.comcast.crm.objectrepositoryutility.creatingNewOrganizationPage;
-import com.comcast.crm.objectrepositoryutility.organizationInfoPage;
-import com.comcast.crm.objectrepositoryutility.organizationPage;
+import com.comcast.crm.objectrepositoryutility.OrganizationInfoPage;
+import com.comcast.crm.objectrepositoryutility.OrganizationsPage;
 
-import Com.ComCast.crm.basetest.BaseClass;
-@Listeners(com.comcast.crm.listnerutility.ListnerImplementationClass.class)
+import com.comcast.crm.basetest.BaseClass;
+@Listeners(com.comcast.crm.listnerutility. ListenerImplementation.class)
 public class CreateOrganizationTest extends BaseClass {
 
 	@Test
@@ -31,18 +31,18 @@ public class CreateOrganizationTest extends BaseClass {
 
 		
 		UtilityClassObject.getTest().log(Status.INFO,"navigate to create org page");
-		organizationPage cnp = new organizationPage(driver);
+		OrganizationsPage cnp = new OrganizationsPage(driver);
 		cnp.getCreateNewOrgBtn().click();
 
 		
 		UtilityClassObject.getTest().log(Status.INFO,"create a new org");
-		creatingNewOrganizationPage cnop = new creatingNewOrganizationPage(driver);
+		CreatingNewOrganizationPage cnop = new CreatingNewOrganizationPage(driver);
 		cnop.createOrg(orgName);
 
 		// Verify Header msg Expected Result
 		UtilityClassObject.getTest().log(Status.INFO,orgName+ "===>create a new org");
-		organizationInfoPage oip = new organizationInfoPage(driver);
-		String actOrgName = oip.getHeaderMsg().getText();
+		OrganizationInfoPage oip = new OrganizationInfoPage(driver);
+		String actOrgName = oip.getHeaderTxt().getText();
 		if (actOrgName.contains(orgName)) {
 			System.out.println(orgName + " name is verified == PASS");
 		} else {
@@ -62,11 +62,11 @@ public class CreateOrganizationTest extends BaseClass {
 		hp.getOrgLink().click();
 
 		// Step 3: Click on "create organization" button
-		organizationPage cnp = new organizationPage(driver);
+		OrganizationsPage cnp = new OrganizationsPage(driver);
 		cnp.getCreateNewOrgBtn().click();
 
-		creatingNewOrganizationPage cnop = new creatingNewOrganizationPage(driver);
-		cnop.createOrgPhoneNumber(orgName, phoneNumber);
+		CreatingNewOrganizationPage cnop = new CreatingNewOrganizationPage(driver);
+		cnop.createOrg(orgName, phoneNumber);
 
 		String actPhoneNumber = driver.findElement(By.id("dtlview_Phone")).getText();
 		if (actPhoneNumber.equals(phoneNumber)) {
@@ -92,11 +92,11 @@ public class CreateOrganizationTest extends BaseClass {
 		hp.getOrgLink().click();
 
 		// Step 3 : click on "create organization" button
-		organizationPage cnp = new organizationPage(driver);
+		OrganizationsPage cnp = new OrganizationsPage(driver);
 		cnp.getCreateNewOrgBtn().click();
 
 		// Step 4: Enter all the details & create new organization
-		creatingNewOrganizationPage cnop = new creatingNewOrganizationPage(driver);
+		CreatingNewOrganizationPage cnop = new CreatingNewOrganizationPage(driver);
 		cnop.createOrg(orgName);
 
 		// Verify the industries and type info

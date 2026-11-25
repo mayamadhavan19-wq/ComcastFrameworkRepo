@@ -1,10 +1,10 @@
 package practice.test;
 
+import org.testng.Assert;
 //import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import Com.ComCast.crm.basetest.BaseClass;
-import junit.framework.Assert;
+import com.comcast.crm.basetest.BaseClass;
 //@Listeners(com.comcast.crm.listnerutility.ListnerImplementationClass.class)
 public class InvoiceTest extends BaseClass {
 	@Test

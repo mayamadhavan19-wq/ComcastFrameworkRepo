@@ -3,18 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="practice.test.InvoiceTest">
+      <class name="Com.ComCast.crm.docTest.CreateDocTest">
         <methods>
           <include name="configBC"/>
           <include name="configBS"/>
           <include name="configAC"/>
           <include name="configAS"/>
-          <include name="CreateInvoiceWithContactTest"/>
-          <include name="configBM"/>
+          <include name="createDocTest"/>
+          <include name="coufigBM"/>
           <include name="configAM"/>
-          <include name="CreateInvoiceTest"/>
         </methods>
-      </class> <!-- practice.test.InvoiceTest -->
+      </class> <!-- Com.ComCast.crm.docTest.CreateDocTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

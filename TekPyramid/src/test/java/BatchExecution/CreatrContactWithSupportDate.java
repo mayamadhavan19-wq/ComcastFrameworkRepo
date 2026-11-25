@@ -4,12 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
+import com.comcast.crm.objectrepositoryutility.CreatingNewOrganizationPage;
 import com.comcast.crm.objectrepositoryutility.HomePage;
-import com.comcast.crm.objectrepositoryutility.creatingNewOrganizationPage;
-import com.comcast.crm.objectrepositoryutility.organizationInfoPage;
-import com.comcast.crm.objectrepositoryutility.organizationPage;
+import com.comcast.crm.objectrepositoryutility.OrganizationInfoPage;
+import com.comcast.crm.objectrepositoryutility.OrganizationsPage;
 
-import Com.ComCast.crm.basetest.BaseClass;
+import com.comcast.crm.basetest.BaseClass;
 
 public class CreatrContactWithSupportDate extends BaseClass{
 	//Test case : 1
@@ -73,22 +73,22 @@ public class CreatrContactWithSupportDate extends BaseClass{
 	 	//driver.findElement(By.linkText("Organizations")).click();
 		
 		//step 3: Click on "create organization" button
-		organizationPage cnp = new organizationPage(driver);
+		OrganizationsPage cnp = new OrganizationsPage(driver);
 		cnp.getCreateNewOrgBtn().click();
 		
 		//driver.findElement(By.xpath("//img[@title='Create Organization...']")).click();   
 		
 		
 		//Step 4:Enter all the details & create new organization
-		creatingNewOrganizationPage cnop = new creatingNewOrganizationPage(driver);
+		CreatingNewOrganizationPage cnop = new CreatingNewOrganizationPage(driver);
 		cnop.createOrg(orgName);
 		
 //		driver.findElement(By.name("accountname")).sendKeys(orgName);
 //		driver.findElement(By.xpath("//input[@title='Save [Alt+S]']")).click();
 		
 		//Verify Header msg Expected Result
-		organizationInfoPage oip = new organizationInfoPage(driver);
-		String actOrgName = oip.getHeaderMsg().getText();
+		OrganizationInfoPage oip = new OrganizationInfoPage(driver);
+		String actOrgName = oip.getHeaderTxt().getText();
 		if(actOrgName.contains(orgName)) {
 			System.out.println(orgName + " name is verified == PASS");
 		}else {
@@ -128,7 +128,7 @@ public class CreatrContactWithSupportDate extends BaseClass{
 					hp.getOrgLink().click();
 					
 					//Step 3: Click on "create organization" button
-					organizationPage cnp = new organizationPage(driver);
+					OrganizationsPage cnp = new OrganizationsPage(driver);
 					cnp.getCreateNewOrgBtn().click();
 					
 					//Step 4 : Enter all the details & create new contact
@@ -136,8 +136,8 @@ public class CreatrContactWithSupportDate extends BaseClass{
 //					String startDate = jLib.getRequiredDateYYYYDDMM(30);
 //					CreatingNewContactPage ccp = new CreatingNewContactPage(driver);
 //					ccp.createContactWithSupportDate(lastName,startDate,endDate);
-					creatingNewOrganizationPage cnop = new creatingNewOrganizationPage(driver);
-					cnop.createOrgPhoneNumber(orgName,phoneNumber);
+					CreatingNewOrganizationPage cnop = new CreatingNewOrganizationPage(driver);
+					cnop.createOrg(orgName,phoneNumber);
 					
 			    	//Verify Header phone Number info Expected Result
 //			    	String actStartDate = driver.findElement(By.id("dtlview_Support Start Date")).getText();
@@ -176,11 +176,11 @@ public class CreatrContactWithSupportDate extends BaseClass{
 			hp.getOrgLink().click();
 			
 			//Step 3 : click on "create organization" button
-			organizationPage cnp = new organizationPage(driver);
+			OrganizationsPage cnp = new OrganizationsPage(driver);
 			cnp.getCreateNewOrgBtn().click();
 			
 			//Step 4: Enter all the details & create new organization
-			creatingNewOrganizationPage cnop = new creatingNewOrganizationPage(driver);
+			CreatingNewOrganizationPage cnop = new CreatingNewOrganizationPage(driver);
 			cnop.createOrg(orgName);
 	    	
 //			//Step 5: navigate to Contact module

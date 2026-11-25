@@ -2,9 +2,10 @@ package practice.test;
 
 import org.testng.annotations.Test;
 
-import com.comcast.crm.objectrepositoryutility.loginPage;
+import com.comcast.crm.objectrepositoryutility.LoginPage;
 
-import Com.ComCast.crm.basetest.BaseClass;
+
+import com.comcast.crm.basetest.BaseClass;
 
 /**
  * test class for contact module
@@ -19,7 +20,7 @@ public class SearchContactTest extends BaseClass {
 public void searchcontactTest()
 {
 	/*step 1: login to app*/
-	loginPage lp=new loginPage(driver);
+	LoginPage lp=new LoginPage(driver);
 		lp.loginToapp("url", "username", "password");	
 }
 }

@@ -19,6 +19,14 @@ public class WebDriverUtility {
 	   WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
 	   wait.until(ExpectedConditions.visibilityOf(element));
    }
+   
+   public void maximize(WebDriver driver) {
+	   driver.manage().window().maximize();
+   }
+   
+   
+   
+   
    public void switchToTabOnUrl(WebDriver driver,String partialURL) {
 	   Set<String> set = driver.getWindowHandles();
    	   Iterator<String> it = set.iterator();

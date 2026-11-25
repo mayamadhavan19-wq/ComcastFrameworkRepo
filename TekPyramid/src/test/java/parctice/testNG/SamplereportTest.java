@@ -10,7 +10,7 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
-import Com.ComCast.crm.basetest.BaseClass;
+import com.comcast.crm.basetest.BaseClass;
 
 public class SamplereportTest {
 	ExtentReports report;

@@ -19,11 +19,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
 import com.comcast.crm.objectrepositoryutility.HomePage;
-import com.comcast.crm.objectrepositoryutility.creatingNewOrganizationPage;
-import com.comcast.crm.objectrepositoryutility.organizationInfoPage;
-import com.comcast.crm.objectrepositoryutility.organizationPage;
 
-import Com.ComCast.crm.basetest.BaseClass;
+
+import com.comcast.crm.basetest.BaseClass;
 //Test case : 5
 //Navigate to application
 //Login to application

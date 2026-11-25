@@ -4,10 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
+import com.comcast.crm.objectrepositoryutility.CreatingNewOrganizationPage;
 import com.comcast.crm.objectrepositoryutility.HomePage;
-import com.comcast.crm.objectrepositoryutility.creatingNewOrganizationPage;
-
-import Com.ComCast.crm.basetest.BaseClass;
+import com.comcast.crm.objectrepositoryutility.OrganizationsPage;
+import com.comcast.crm.basetest.BaseClass;
 import CreatingNewContactPage.CreatingNewContactPage;
 import contactPage.ContactPage;
 
@@ -84,12 +84,11 @@ public class AssertionForContactTest extends BaseClass {
 		hp.getOrgLink().click();
 
 		// Step 3 : click on "create organization" button
-		com.comcast.crm.objectrepositoryutility.creatingNewOrganizationPage cnp = new com.comcast.crm.objectrepositoryutility.creatingNewOrganizationPage(
-				driver);
+		OrganizationsPage cnp = new OrganizationsPage(driver);
 		cnp.getCreateNewOrgBtn().click();
 
 		// Step 4: Enter all the details & create new organization
-		creatingNewOrganizationPage cnop = new com.comcast.crm.objectrepositoryutility.creatingNewOrganizationPage(
+		CreatingNewOrganizationPage cnop = new CreatingNewOrganizationPage(
 				driver);
 		cnop.createOrg(orgName);
 
